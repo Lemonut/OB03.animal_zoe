@@ -100,8 +100,8 @@ class Zoo:
             "animals": [{"name": a.name, "age": a.age, "type": a.__class__.__name__} for a in self.animals],
             "employees": [{"name": e.name, "position": e.position} for e in self.employees],
         }
-        with open(filename, "w") as file:
-            json.dump(data, file)
+        with open(filename, "w", encoding="utf-8") as file:
+            json.dump(data, file, ensure_ascii=False, indent=4)
         print("Данные зоопарка сохранены.")
 
     # Загрузка данных из файла
